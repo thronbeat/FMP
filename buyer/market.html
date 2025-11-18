@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmLink Global - Marketplace</title>
+    <link rel="stylesheet" href="css/market.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">🌾</div>
+            <span>FarmLink Global</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="" class="active">Marketplace</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+        
+        <div class="nav-right">
+            <div class="user-badge">H</div>
+            <span class="username">hakizimanaephrem47</span>
+            <button class="logout-btn">
+                <span>🚪</span>
+                Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Marketplace</h1>
+            <p>Browse quality agricultural products from farmers worldwide</p>
+        </div>
+
+        <div class="filters">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search products..." id="searchInput">
+            </div>
+            
+            <div class="select-box">
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="dairy">Dairy</option>
+                    <option value="grains">Grains</option>
+                    <option value="vegetables">Vegetables</option>
+                </select>
+            </div>
+            
+            <div class="select-box">
+                <select id="sortFilter">
+                    <option value="newest">Newest First</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Highest Rated</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <div class="product-card" data-category="fruits" data-price="3.00">
+                <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400&h=300&fit=crop" alt="Green Apples" class="product-image">
+                <div class="product-content">
+                    <span class="product-category category-fruits">Fruits</span>
+                    <h3 class="product-title">Green Apples</h3>
+                    <p class="product-seller">by Emma Davis</p>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-text">4.5 (76 reviews)</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price-info">
+                            <span class="product-price">$3.00</span>
+                            <span class="product-stock">450kg in stock</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="dairy" data-price="2.00">
+                <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=300&fit=crop" alt="Fresh Milk" class="product-image">
+                <div class="product-content">
+                    <span class="product-category category-dairy">Dairy</span>
+                    <h3 class="product-title">Fresh Milk</h3>
+                    <p class="product-seller">by Mike Brown</p>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-text">4.8 (142 reviews)</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price-info">
+                            <span class="product-price">$2.00</span>
+                            <span class="product-stock">200kg in stock</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="grains" data-price="3.50">
+                <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&h=300&fit=crop" alt="Organic Rice" class="product-image">
+                <div class="product-content">
+                    <span class="product-category category-grains">Grains</span>
+                    <h3 class="product-title">Organic Rice</h3>
+                    <p class="product-seller">by Sarah Williams</p>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-text">4.7 (89 reviews)</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price-info">
+                            <span class="product-price">$3.50</span>
+                            <span class="product-stock">1000kg in stock</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="fruits" data-price="4.00">
+                <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=400&h=300&fit=crop" alt="Fresh Strawberries" class="product-image">
+                <div class="product-content">
+                    <span class="product-category category-fruits">Fruits</span>
+                    <h3 class="product-title">Fresh Strawberries</h3>
+                    <p class="product-seller">by Lisa Anderson</p>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">4.9 (203 reviews)</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price-info">
+                            <span class="product-price">$4.00</span>
+                            <span class="product-stock">120kg in stock</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="vegetables" data-price="2.50">
+                <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=400&h=300&fit=crop" alt="Sweet Corn" class="product-image">
+                <div class="product-content">
+                    <span class="product-category category-vegetables">Vegetables</span>
+                    <h3 class="product-title">Sweet Corn</h3>
+                    <p class="product-seller">by John Miller</p>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-text">4.6 (95 reviews)</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price-info">
+                            <span class="product-price">$2.50</span>
+                            <span class="product-stock">300kg in stock</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="vegetables" data-price="3.20">
+                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=300&fit=crop" alt="Organic Tomatoes" class="product-image">
+                <div class="product-content">
+                    <span class="product-category category-vegetables">Vegetables</span>
+                    <h3 class="product-title">Organic Tomatoes</h3>
+                    <p class="product-seller">by Maria Garcia</p>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">4.8 (157 reviews)</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price-info">
+                            <span class="product-price">$3.20</span>
+                            <span class="product-stock">250kg in stock</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/market.js"></script>
+</body>
+</html>

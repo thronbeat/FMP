@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmLink Global - Orders</title>
+    <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">🌾</div>
+            <span>FarmLink Global</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="market.html">Marketplace</a></li>
+            <li><a href="" class="active">Orders</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+        
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                🌙
+            </button>
+            <div class="user-badge">H</div>
+            <span class="username">hakizimanaephrem47</span>
+            <button class="logout-btn">
+                <span>🚪</span>
+                Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Orders</h1>
+            <p>Track your purchases and deliveries</p>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="processing">Processing</button>
+            <button class="filter-btn" data-filter="shipped">Shipped</button>
+            <button class="filter-btn" data-filter="delivered">Delivered</button>
+        </div>
+
+        <div class="orders-list" id="ordersList">
+            <div class="order-card" data-status="delivered">
+                <div class="order-header">
+                    <div class="order-info">
+                        <h3>ORD-001</h3>
+                        <p class="order-date">2025-11-10</p>
+                    </div>
+                    <span class="status-badge status-delivered">Delivered</span>
+                </div>
+
+                <div class="order-items">
+                    <div class="order-item">
+                        <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=100&h=100&fit=crop" alt="Organic Tomatoes" class="item-image">
+                        <div class="item-details">
+                            <div class="item-name">Organic Tomatoes</div>
+                            <div class="item-quantity">10kg × $2.50</div>
+                        </div>
+                    </div>
+
+                    <div class="order-item">
+                        <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=100&h=100&fit=crop" alt="Fresh Strawberries" class="item-image">
+                        <div class="item-details">
+                            <div class="item-name">Fresh Strawberries</div>
+                            <div class="item-quantity">5kg × $4.20</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-footer">
+                    <div class="farmer-info">Farmer: John Smith</div>
+                    <div class="order-total">
+                        <span>Total:</span>$46.00
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-card" data-status="shipped">
+                <div class="order-header">
+                    <div class="order-info">
+                        <h3>ORD-002</h3>
+                        <p class="order-date">2025-11-11</p>
+                    </div>
+                    <span class="status-badge status-shipped">Shipped</span>
+                </div>
+
+                <div class="order-items">
+                    <div class="order-item">
+                        <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=100&h=100&fit=crop" alt="Sweet Corn" class="item-image">
+                        <div class="item-details">
+                            <div class="item-name">Sweet Corn</div>
+                            <div class="item-quantity">20kg × $1.80</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-footer">
+                    <div class="farmer-info">Farmer: Mary Johnson</div>
+                    <div class="order-total">
+                        <span>Total:</span>$36.00
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-card" data-status="processing">
+                <div class="order-header">
+                    <div class="order-info">
+                        <h3>ORD-003</h3>
+                        <p class="order-date">2025-11-12</p>
+                    </div>
+                    <span class="status-badge status-processing">Processing</span>
+                </div>
+
+                <div class="order-items">
+                    <div class="order-item">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=100&h=100&fit=crop" alt="Organic Rice" class="item-image">
+                        <div class="item-details">
+                            <div class="item-name">Organic Rice</div>
+                            <div class="item-quantity">50kg × $3.50</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-footer">
+                    <div class="farmer-info">Farmer: Sarah Williams</div>
+                    <div class="order-total">
+                        <span>Total:</span>$175.00
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-card" data-status="pending">
+                <div class="order-header">
+                    <div class="order-info">
+                        <h3>ORD-004</h3>
+                        <p class="order-date">2025-11-13</p>
+                    </div>
+                    <span class="status-badge status-pending">Pending</span>
+                </div>
+
+                <div class="order-items">
+                    <div class="order-item">
+                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=100&h=100&fit=crop" alt="Green Apples" class="item-image">
+                        <div class="item-details">
+                            <div class="item-name">Green Apples</div>
+                            <div class="item-quantity">15kg × $3.00</div>
+                        </div>
+                    </div>
+
+                    <div class="order-item">
+                        <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=100&h=100&fit=crop" alt="Fresh Milk" class="item-image">
+                        <div class="item-details">
+                            <div class="item-name">Fresh Milk</div>
+                            <div class="item-quantity">10kg × $2.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-footer">
+                    <div class="farmer-info">Farmer: Emma Davis</div>
+                    <div class="order-total">
+                        <span>Total:</span>$65.00
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/order.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .header {
+            background-color: white;
+            border-bottom: 1px solid #e9ecef;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #10b981;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .nav a.active {
+            color: #10b981;
+        }
+
+        .user-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .notification {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #10b981;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .logout-btn {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        .chart-title {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .market-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .market-item:last-child {
+            border-bottom: none;
+        }
+
+        .market-name {
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .market-price {
+            font-size: 16px;
+            font-weight: 600;
+            color: #10b981;
+        }
+
+        .market-change {
+            font-size: 12px;
+            margin-top: 0.25rem;
+        }
+
+        .market-change.up {
+            color: #10b981;
+        }
+
+        .market-change.down {
+            color: #ef4444;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 20px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .stat-subtext {
+            font-size: 12px;
+            color: #10b981;
+            margin-top: 0.5rem;
+        }
+
+        .insights-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .insight-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .insight-item:nth-child(1) {
+            background-color: #f0fdf4;
+        }
+
+        .insight-item:nth-child(2) {
+            background-color: #fefce8;
+        }
+
+        .insight-item:nth-child(3) {
+            background-color: #eff6ff;
+        }
+
+        .insight-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .insight-icon.green {
+            background-color: #10b981;
+        }
+
+        .insight-icon.yellow {
+            background-color: #f59e0b;
+        }
+
+        .insight-icon.blue {
+            background-color: #3b82f6;
+        }
+
+        .insight-content h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .insight-content p {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.5;
+        }

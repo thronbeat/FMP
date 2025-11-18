@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://kit.fontawesome.com/8f044a818f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/Dashboard.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon"><i class="fa-brands fa-product-hunt"></i></span>
+            <span>FarmLink Global</span>
+        </div>
+        <nav class="nav">
+            <a href="Dashboard.html" class="active">Dashboard</a>
+            <a href="MarketPlace.html">Marketplace</a>
+            <a href="Product.html">My Products</a>
+            <a href="Order.html">Orders</a>
+            <a href="MarketData.html">Market Data</a>
+        </nav>
+        <div class="header-right">
+            <div class="user-avatar">N</div>
+            <span style="color: #6b7280;">Natete</span>
+            <button class="logout-btn">
+                <span>↗</span>
+                <span>Logout</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>Dashboard</h1>
+            <p>Manage your farm operations and track sales</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon green"><i class="fa-brands fa-product-hunt"></i></div>
+                <div class="stat-value">12</div>
+                <div class="stat-label">Total Products</div>
+                <div class="stat-change">+2 this month</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon blue"><i class="fa-solid fa-sack-dollar"></i></div>
+                <div class="stat-value">$4,850</div>
+                <div class="stat-label">Total Revenue</div>
+                <div class="stat-change">+12% from last month</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon yellow"><i class="fa-solid fa-shop"></i></div>
+                <div class="stat-value">8</div>
+                <div class="stat-label">Active Orders</div>
+                <div class="stat-secondary">3 pending</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple"><i class="fa-solid fa-star"></i></div>
+                <div class="stat-value">4.7</div>
+                <div class="stat-label">Average Rating</div>
+                <div class="stat-change">+0.2 points</div>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Recent Activity -->
+            <div class="section-card">
+                <h2>Recent Activity</h2>
+                
+                <div class="activity-item">
+                    <div class="activity-icon cart"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <div class="activity-content">
+                        <h3>New Order Received</h3>
+                        <p>Order #ORD-004 - 15kg Green Apples</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon star"><i class="fa-solid fa-star"></i></div>
+                    <div class="activity-content">
+                        <h3>New Review</h3>
+                        <p>John rated your Tomatoes 5 stars</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon box"><i class="fa-brands fa-product-hunt"></i></div>
+                    <div class="activity-content">
+                        <h3>Product Updated</h3>
+                        <p>Stock updated for Sweet Corn</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section-card">
+                <h2>Quick Actions</h2>
+
+                <button class="action-btn" onclick="alert('Add New Product')">
+                    <h3>Add New Product</h3>
+                    <p>List a new product on the marketplace</p>
+                </button>
+
+                <button class="action-btn" onclick="alert('View Orders')">
+                    <h3>View Orders</h3>
+                    <p>Check and manage your orders</p>
+                </button>
+
+                <button class="action-btn" onclick="alert('Market Analytics')">
+                    <h3>Market Analytics</h3>
+                    <p>View market trends and pricing</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Logout functionality
+        document.querySelector('.logout-btn').addEventListener('click', function() {
+            if(confirm('Are you sure you want to logout?')) {
+                alert('Logging out...');
+            }
+        });
+    </script>
+</body>
+</html>

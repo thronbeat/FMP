@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmLink Global - Orders</title>
+  <link rel="stylesheet" href="CSS/order.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/2909/2909762.png" alt="logo">
+      FarmLink Global
+    </div>
+    <nav>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="MarketPlace.html">Marketplace</a>
+      <a href="Product.html">My Products</a>
+      <a href="Order.html" class="active">Orders</a>
+      <a href="MarketData.html">Market Data</a>
+    </nav>
+    <div class="actions">
+      <div class="user-icon" style="background:#00994d;color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;">N</div>
+      <button class="logout">Logout</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-title">Orders</div>
+    <div class="subtitle">Manage incoming orders from buyers</div>
+
+    <div class="filter-buttons">
+      <button class="active" data-status="All">All</button>
+      <button data-status="Pending">Pending</button>
+      <button data-status="Processing">Processing</button>
+      <button data-status="Shipped">Shipped</button>
+      <button data-status="Delivered">Delivered</button>
+    </div>
+
+    <div id="ordersList"></div>
+  </div>
+
+  <script src="JS/order.js"></script>
+</body>
+</html>

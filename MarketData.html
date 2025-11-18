@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmLink Global - Market Data</title>
+    <link rel="stylesheet" href="CSS/marketData.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <div class="logo-icon">🌾</div>
+            FarmLink Global
+        </div>
+        <nav class="nav">
+            <a href="Dashboard.html">Dashboard</a>
+            <a href="MarketPlace.html">Marketplace</a>
+            <a href="Product.html">My Products</a>
+            <a href="Order.html">Orders</a>
+            <a href="MarketData.html" class="active">Market Data</a>
+        </nav>
+        <div class="user-section">
+            <div class="notification">N</div>
+            <button class="logout-btn">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title">Market Data & Analytics</h1>
+        <p class="page-subtitle">Real-time market information and price trends</p>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h2 class="card-title">Price Trends</h2>
+                <p class="chart-title">Tomato Price Trend (USD/kg)</p>
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Market Overview</h2>
+                <div class="market-item">
+                    <div>
+                        <div class="market-name">Tomatoes</div>
+                        <div class="market-change up">↑ 7.2%</div>
+                    </div>
+                    <div class="market-price">$2.50/kg</div>
+                </div>
+                <div class="market-item">
+                    <div>
+                        <div class="market-name">Corn</div>
+                        <div class="market-change down">↓ 2.1%</div>
+                    </div>
+                    <div class="market-price">$1.80/kg</div>
+                </div>
+                <div class="market-item">
+                    <div>
+                        <div class="market-name">Strawberries</div>
+                        <div class="market-change up">↑ 5.5%</div>
+                    </div>
+                    <div class="market-price">$4.20/kg</div>
+                </div>
+                <div class="market-item">
+                    <div>
+                        <div class="market-name">Rice</div>
+                        <div class="market-change up">↑ 1.8%</div>
+                    </div>
+                    <div class="market-price">$3.50/kg</div>
+                </div>
+                <div class="market-item">
+                    <div>
+                        <div class="market-name">Milk</div>
+                        <div class="market-change down">↓ 0.5%</div>
+                    </div>
+                    <div class="market-price">$2.00/kg</div>
+                </div>
+                <div class="market-item">
+                    <div>
+                        <div class="market-name">Apples</div>
+                        <div class="market-change up">↑ 3.7%</div>
+                    </div>
+                    <div class="market-price">$3.00/kg</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="background-color: #d1fae5;">📈</div>
+                <div class="stat-label">Average Market Price</div>
+                <div class="stat-value">$2.83</div>
+                <div class="stat-subtext">+4.2% from last week</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background-color: #fef3c7;">🍅</div>
+                <div class="stat-label">Most Traded Product</div>
+                <div class="stat-value">Tomatoes</div>
+                <div class="stat-subtext">1,245 transactions today</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background-color: #dbeafe;">📦</div>
+                <div class="stat-label">Market Volume</div>
+                <div class="stat-value">5,890 kg</div>
+                <div class="stat-subtext">Traded in last 24h</div>
+            </div>
+        </div>
+
+        <div class="insights-section">
+            <h2 class="card-title">Market Insights</h2>
+            <div class="insight-item">
+                <div class="insight-icon green">i</div>
+                <div class="insight-content">
+                    <h4>Strawberries price surge</h4>
+                    <p>Strawberry prices have increased by 8.5% due to high demand and limited supply in the region.</p>
+                </div>
+            </div>
+            <div class="insight-item">
+                <div class="insight-icon yellow">⚠</div>
+                <div class="insight-content">
+                    <h4>Corn prices stabilizing</h4>
+                    <p>After a slight dip, corn prices are expected to remain stable throughout the week.</p>
+                </div>
+            </div>
+            <div class="insight-item">
+                <div class="insight-icon blue">i</div>
+                <div class="insight-content">
+                    <h4>New harvest season approaching</h4>
+                    <p>Multiple products are expected to see price adjustments as the new harvest season begins.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/marketData.js"></script>
+</body>
+</html>

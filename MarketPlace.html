@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmLink Global Marketplace</title>
+  <link rel="stylesheet" href="CSS/marketPlace.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/2909/2909762.png" alt="logo" />
+      FarmLink Global
+    </div>
+    <nav>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="MarketPlace.html" class="active">Marketplace</a>
+      <a href="Product.html">My Products</a>
+      <a href="Order.html">Orders</a>
+      <a href="MarketData.html">Market Data</a>
+    </nav>
+    <div class="actions">
+      <div class="user-icon" style="background:#00994d;color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;">N</div>
+      <button class="logout">Logout</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-title">Marketplace</div>
+    <div class="subtitle">Browse quality agricultural products from farmers worldwide</div>
+
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search products..." />
+      <select name="category" id="category">
+        <option value="all">All Categories</option>
+        <option value="fruits">Fruits</option>
+        <option value="dairy">Dairy</option>
+        <option value="grains">Grains</option>
+        <option value="vegetables">Vegetables</option>
+      </select>
+      <select name="sort" id="sort">
+        <option value="newest">Newest First</option>
+        <option value="priceLow">Price: Low to High</option>
+        <option value="priceHigh">Price: High to Low</option>
+      </select>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+
+  <script src="JS/marketPlace.js"></script>
+</body>
+</html>

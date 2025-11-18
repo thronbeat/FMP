@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmLink Global - My Products</title>
+  <link rel="stylesheet" href="CSS/product.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/2909/2909762.png" alt="logo">
+      FarmLink Global
+    </div>
+    <nav>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="MarketPlace.html">Marketplace</a>
+      <a href="Product.html" class="active">My Products</a>
+      <a href="Order.html">Orders</a>
+      <a href="MarketData.html">Market Data</a>
+    </nav>
+    <div class="actions">
+      <div class="user-icon" style="background:#00994d;color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;">N</div>
+      <button class="logout">Logout</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <div>
+        <h2>My Products</h2>
+        <p>Manage your product listings</p>
+      </div>
+      <button class="add-btn" id="addProduct"><b>+</b> Add New Product</button>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+
+  <!-- Modal for Add/Edit Product -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Add New Product</h3>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="productForm">
+          <div class="form-group">
+            <label for="productName">Product Name *</label>
+            <input type="text" id="productName" required placeholder="e.g., Organic Tomatoes">
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category *</label>
+            <select id="category" required>
+              <option value="">Select a category</option>
+              <option value="vegetables">Vegetables</option>
+              <option value="fruits">Fruits</option>
+              <option value="grains">Grains</option>
+              <option value="dairy">Dairy</option>
+              <option value="livestock">Livestock</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description *</label>
+            <textarea id="description" required placeholder="Describe your product..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="price">Price ($/unit) *</label>
+              <input type="number" id="price" step="0.01" min="0" required placeholder="2.50">
+            </div>
+
+            <div class="form-group">
+              <label for="stock">Stock Quantity *</label>
+              <input type="number" id="stock" min="0" required placeholder="500">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="stockUnit">Stock Unit *</label>
+            <select id="stockUnit" required>
+              <option value="kg">Kilograms (kg)</option>
+              <option value="lbs">Pounds (lbs)</option>
+              <option value="tons">Tons</option>
+              <option value="units">Units</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+            <input type="file" id="imageUrl" placeholder="https://example.com/image.jpg">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-cancel" id="cancelBtn">Cancel</button>
+        <button type="submit" class="btn-submit" id="submitBtn">Add Product</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/procuct.js"></script>
+</body>
+</html>

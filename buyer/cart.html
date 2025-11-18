@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmLink Global - Shopping Cart</title>
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">🌾</div>
+            <span>FarmLink Global</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="market.html">Marketplace</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="" class="active">Cart</a></li>
+        </ul>
+        
+        <div class="nav-right">
+            <div class="user-badge">H</div>
+            <span class="username">hakizimanaephrem47</span>
+            <button class="logout-btn">
+                <span>🚪</span>
+                Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Shopping Cart</h1>
+            <p>Review your items before checkout</p>
+        </div>
+
+        <div class="cart-layout">
+            <div class="cart-items" id="cartItems">
+                <div class="cart-item" data-price="3.00" data-id="1">
+                    <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=200&h=200&fit=crop" alt="Green Apples" class="item-image">
+                    <div class="item-details">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Green Apples</h3>
+                                <p class="item-seller">by Emma Davis</p>
+                                <span class="item-category category-fruits">Fruits</span>
+                            </div>
+                            <button class="remove-btn" onclick="removeItem(1)">×</button>
+                        </div>
+                        <div class="item-footer">
+                            <div class="quantity-control">
+                                <button class="quantity-btn" onclick="updateQuantity(1, -1)">−</button>
+                                <span class="quantity-value" id="qty-1">2</span>
+                                <button class="quantity-btn" onclick="updateQuantity(1, 1)">+</button>
+                            </div>
+                            <div class="item-price" id="price-1">$6.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-item" data-price="2.00" data-id="2">
+                    <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=200&h=200&fit=crop" alt="Fresh Milk" class="item-image">
+                    <div class="item-details">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Fresh Milk</h3>
+                                <p class="item-seller">by Mike Brown</p>
+                                <span class="item-category category-dairy">Dairy</span>
+                            </div>
+                            <button class="remove-btn" onclick="removeItem(2)">×</button>
+                        </div>
+                        <div class="item-footer">
+                            <div class="quantity-control">
+                                <button class="quantity-btn" onclick="updateQuantity(2, -1)">−</button>
+                                <span class="quantity-value" id="qty-2">1</span>
+                                <button class="quantity-btn" onclick="updateQuantity(2, 1)">+</button>
+                            </div>
+                            <div class="item-price" id="price-2">$2.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-item" data-price="3.50" data-id="3">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop" alt="Organic Rice" class="item-image">
+                    <div class="item-details">
+                        <div class="item-header">
+                            <div class="item-info">
+                                <h3>Organic Rice</h3>
+                                <p class="item-seller">by Sarah Williams</p>
+                                <span class="item-category category-grains">Grains</span>
+                            </div>
+                            <button class="remove-btn" onclick="removeItem(3)">×</button>
+                        </div>
+                        <div class="item-footer">
+                            <div class="quantity-control">
+                                <button class="quantity-btn" onclick="updateQuantity(3, -1)">−</button>
+                                <span class="quantity-value" id="qty-3">3</span>
+                                <button class="quantity-btn" onclick="updateQuantity(3, 1)">+</button>
+                            </div>
+                            <div class="item-price" id="price-3">$10.50</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-summary">
+                <h2 class="summary-title">Order Summary</h2>
+                
+                <div class="summary-row">
+                    <span class="summary-label">Subtotal</span>
+                    <span class="summary-value" id="subtotal">$18.50</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span class="summary-label">Shipping</span>
+                    <span class="summary-value" id="shipping">$5.00</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span class="summary-label">Tax (10%)</span>
+                    <span class="summary-value" id="tax">$1.85</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span class="summary-label">Discount</span>
+                    <span class="summary-value green" id="discount">-$2.00</span>
+                </div>
+                
+                <div class="summary-row total">
+                    <span class="summary-label">Total</span>
+                    <span class="summary-value green" id="total">$23.35</span>
+                </div>
+                
+                <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+                <button class="continue-shopping" onclick="continueShopping()">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/cart.js"></script>
+</body>
+</html>

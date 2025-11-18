@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmLink Global - Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">🌾</div>
+            <span>FarmLink Global</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="" class="active">Dashboard</a></li>
+            <li><a href="market.html">Marketplace</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+        
+        <div class="nav-right">
+            <div class="user-badge">H</div>
+            <span class="username">hakizimanaephrem47</span>
+            <button class="logout-btn">
+                <span>🚪</span>
+                Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <p>Explore products and manage your purchases</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon green">🛒</div>
+                <div class="stat-value">24</div>
+                <div class="stat-label">Total Orders</div>
+                <div class="stat-change">+4 this month</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon blue">💲</div>
+                <div class="stat-value">$1,280</div>
+                <div class="stat-label">Total Spent</div>
+                <div class="stat-change">Last order: $45</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon yellow">📦</div>
+                <div class="stat-value">3</div>
+                <div class="stat-label">Pending Deliveries</div>
+                <div class="stat-change">2 arriving today</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple">⭐</div>
+                <div class="stat-value">15</div>
+                <div class="stat-label">Favorite Products</div>
+                <div class="stat-change">+3 new favorites</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h2>Recent Activity</h2>
+                
+                <div class="activity-item">
+                    <div class="activity-icon green">✓</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Order Delivered</div>
+                        <div class="activity-desc">Order #ORD-001 delivered successfully</div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon blue">🚚</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Order Shipped</div>
+                        <div class="activity-desc">Order #ORD-002 is on the way</div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon yellow">🛍️</div>
+                    <div class="activity-content">
+                        <div class="activity-title">New Purchase</div>
+                        <div class="activity-desc">Ordered 50kg Organic Rice</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>Quick Actions</h2>
+                
+                <div class="action-item">
+                    <div class="action-title">Browse Products</div>
+                    <div class="action-desc">Explore fresh products from farmers</div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-title">Track Orders</div>
+                    <div class="action-desc">Monitor your order status</div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-title">View Cart</div>
+                    <div class="action-desc">Check items in your shopping cart</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/dashboard.js"></script>
+</body>
+</html>

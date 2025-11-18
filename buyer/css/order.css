@@ -1,0 +1,462 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        .navbar {
+            background-color: white;
+            border-bottom: 1px solid #e9ecef;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #10b981;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: #10b981;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6c757d;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-badge {
+            width: 40px;
+            height: 40px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .username {
+            color: #212529;
+            font-size: 14px;
+        }
+
+        .logout-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: #c82333;
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #dee2e6;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: #f8f9fa;
+            transform: scale(1.05);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e9ecef;
+        }
+
+        body.dark-mode .navbar {
+            background-color: #2d2d2d;
+            border-bottom-color: #404040;
+        }
+
+        body.dark-mode .nav-links a {
+            color: #adb5bd;
+        }
+
+        body.dark-mode .nav-links a:hover,
+        body.dark-mode .nav-links a.active {
+            color: #10b981;
+        }
+
+        body.dark-mode .username {
+            color: #e9ecef;
+        }
+
+        body.dark-mode .theme-toggle {
+            background: #404040;
+            border-color: #505050;
+            color: #fbbf24;
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            background: #505050;
+        }
+
+        body.dark-mode .header p {
+            color: #adb5bd;
+        }
+
+        body.dark-mode .filter-btn {
+            background: #2d2d2d;
+            border-color: #404040;
+            color: #adb5bd;
+        }
+
+        body.dark-mode .filter-btn:hover {
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        body.dark-mode .filter-btn.active {
+            background: #10b981;
+            color: white;
+            border-color: #10b981;
+        }
+
+        body.dark-mode .order-card {
+            background: #2d2d2d;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .order-header {
+            border-bottom-color: #404040;
+        }
+
+        body.dark-mode .order-date {
+            color: #adb5bd;
+        }
+
+        body.dark-mode .item-quantity {
+            color: #adb5bd;
+        }
+
+        body.dark-mode .order-footer {
+            border-top-color: #404040;
+        }
+
+        body.dark-mode .farmer-info {
+            color: #adb5bd;
+        }
+
+        body.dark-mode .order-total {
+            color: #e9ecef;
+        }
+
+        body.dark-mode .order-total span {
+            color: #adb5bd;
+        }
+
+        body.dark-mode .empty-state {
+            background: #2d2d2d;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .empty-state p {
+            color: #adb5bd;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #6c757d;
+            font-size: 15px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            border: 1px solid #dee2e6;
+            background: white;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #495057;
+        }
+
+        .filter-btn:hover {
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        .filter-btn.active {
+            background: #10b981;
+            color: white;
+            border-color: #10b981;
+        }
+
+        .orders-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f1f3f5;
+        }
+
+        .order-info h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .order-date {
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+        .status-badge {
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .status-delivered {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-shipped {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-processing {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-pending {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .order-items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .order-item {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+
+        .item-quantity {
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+        .order-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #f1f3f5;
+        }
+
+        .farmer-info {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .order-total {
+            font-size: 20px;
+            font-weight: 700;
+            color: #212529;
+        }
+
+        .order-total span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #6c757d;
+            margin-right: 10px;
+        }
+
+        .empty-state {
+            background: white;
+            border-radius: 12px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .empty-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .empty-state h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .empty-state p {
+            color: #6c757d;
+            margin-bottom: 25px;
+        }
+
+        .action-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .action-btn:hover {
+            background: #059669;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .username {
+                display: none;
+            }
+
+            .order-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .order-footer {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+        }
