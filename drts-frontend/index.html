@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRTS - Device Registry and Transfer System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>DRTS</h1>
+                <span>Rwanda Device Registry</span>
+            </div>
+            <nav class="nav" id="nav">
+                <a href="#" class="nav-link active" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="login">Login</a>
+                <a href="#" class="nav-link" data-page="register">Register</a>
+            </nav>
+            <nav class="nav-auth" id="navAuth" style="display: none;">
+                <a href="#" class="nav-link" data-page="dashboard">Dashboard</a>
+                <a href="#" class="nav-link" data-page="devices">My Devices</a>
+                <a href="#" class="nav-link" data-page="transfers">Transfers</a>
+                <a href="#" class="nav-link" data-page="reports">Reports</a>
+                <a href="#" class="nav-link" id="logoutBtn">Logout</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <section id="homePage" class="page active">
+                <div class="hero">
+                    <h2>Secure Your Devices</h2>
+                    <p>Register, transfer, and protect your electronic devices with Rwanda's official device registry system.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="showPage('register')">Get Started</button>
+                        <button class="btn btn-secondary" onclick="showPage('check')">Verify a Device</button>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Register Devices</h3>
+                        <p>Register your phones, laptops, tablets, and TVs with their unique identifiers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Secure Transfers</h3>
+                        <p>Transfer device ownership securely with OTP verification.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📷</div>
+                        <h3>QR Code Transfer</h3>
+                        <p>Quick face-to-face transfers using QR codes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Lost & Found</h3>
+                        <p>Report lost devices and help return found ones to owners.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Check Device Page -->
+            <section id="checkPage" class="page">
+                <div class="card">
+                    <h2>Verify a Device</h2>
+                    <p>Enter an IMEI or serial number to check if a device is registered.</p>
+                    <form id="checkDeviceForm">
+                        <div class="form-group">
+                            <label for="checkIdentifier">IMEI / Serial Number</label>
+                            <input type="text" id="checkIdentifier" placeholder="Enter device identifier" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Check Device</button>
+                    </form>
+                    <div id="checkResult" class="result-box" style="display: none;"></div>
+                </div>
+            </section>
+
+            <!-- Login Page -->
+            <section id="loginPage" class="page">
+                <div class="card auth-card">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginPhone">Phone Number</label>
+                            <input type="tel" id="loginPhone" placeholder="+250XXXXXXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" placeholder="Your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                    <p class="auth-link">Don't have an account? <a href="#" onclick="showPage('register')">Register</a></p>
+                </div>
+            </section>
+
+            <!-- Register Page -->
+            <section id="registerPage" class="page">
+                <div class="card auth-card">
+                    <h2>Create Account</h2>
+                    <form id="registerForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="regFirstName">First Name</label>
+                                <input type="text" id="regFirstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="regLastName">Last Name</label>
+                                <input type="text" id="regLastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="regNationalId">National ID (16 digits)</label>
+                            <input type="text" id="regNationalId" maxlength="16" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regPhone">Phone Number</label>
+                            <input type="tel" id="regPhone" placeholder="+250XXXXXXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regPassword">Password</label>
+                            <input type="password" id="regPassword" minlength="6" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </form>
+                    <p class="auth-link">Already have an account? <a href="#" onclick="showPage('login')">Login</a></p>
+                </div>
+            </section>
+
+            <!-- OTP Verification Page -->
+            <section id="otpPage" class="page">
+                <div class="card auth-card">
+                    <h2>Verify Phone Number</h2>
+                    <p>Enter the 6-digit code sent to your phone.</p>
+                    <form id="otpForm">
+                        <div class="form-group">
+                            <label for="otpCode">OTP Code</label>
+                            <input type="text" id="otpCode" maxlength="6" placeholder="000000" required>
+                        </div>
+                        <input type="hidden" id="otpPhone">
+                        <button type="submit" class="btn btn-primary btn-block">Verify</button>
+                    </form>
+                    <p class="auth-link"><a href="#" id="resendOtp">Resend OTP</a></p>
+                </div>
+            </section>
+
+            <!-- Dashboard Page -->
+            <section id="dashboardPage" class="page">
+                <h2>Dashboard</h2>
+                <div class="stats-grid" id="statsGrid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="myDevicesCount">0</div>
+                        <div class="stat-label">My Devices</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="pendingTransfers">0</div>
+                        <div class="stat-label">Pending Transfers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="activeReports">0</div>
+                        <div class="stat-label">Active Reports</div>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <button class="btn btn-primary" onclick="showPage('addDevice')">Register New Device</button>
+                    <button class="btn btn-secondary" onclick="showPage('scan')">Scan QR Code</button>
+                </div>
+            </section>
+
+            <!-- My Devices Page -->
+            <section id="devicesPage" class="page">
+                <div class="page-header">
+                    <h2>My Devices</h2>
+                    <button class="btn btn-primary" onclick="showPage('addDevice')">+ Add Device</button>
+                </div>
+                <div id="devicesList" class="devices-grid">
+                    <!-- Devices will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Add Device Page -->
+            <section id="addDevicePage" class="page">
+                <div class="card">
+                    <h2>Register New Device</h2>
+                    <form id="addDeviceForm">
+                        <div class="form-group">
+                            <label for="deviceType">Device Type</label>
+                            <select id="deviceType" required>
+                                <option value="">Select type</option>
+                                <option value="phone">Phone</option>
+                                <option value="laptop">Laptop</option>
+                                <option value="tablet">Tablet</option>
+                                <option value="tv">TV</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="deviceBrand">Brand</label>
+                                <input type="text" id="deviceBrand" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="deviceModel">Model</label>
+                                <input type="text" id="deviceModel" required>
+                            </div>
+                        </div>
+                        <div id="phoneIdentifiers">
+                            <div class="form-group">
+                                <label for="imei1">IMEI 1 (15 digits)</label>
+                                <input type="text" id="imei1" maxlength="15" pattern="[0-9]{15}">
+                            </div>
+                            <div class="form-group">
+                                <label for="imei2">IMEI 2 (optional)</label>
+                                <input type="text" id="imei2" maxlength="15" pattern="[0-9]{15}">
+                            </div>
+                        </div>
+                        <div id="otherIdentifiers" style="display: none;">
+                            <div class="form-group">
+                                <label for="serialNumber">Serial Number</label>
+                                <input type="text" id="serialNumber">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="deviceColor">Color</label>
+                            <input type="text" id="deviceColor">
+                        </div>
+                        <div class="form-group">
+                            <label for="deviceDescription">Description (optional)</label>
+                            <textarea id="deviceDescription" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register Device</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Transfers Page -->
+            <section id="transfersPage" class="page">
+                <div class="page-header">
+                    <h2>Transfers</h2>
+                </div>
+                <div class="tabs">
+                    <button class="tab active" data-tab="incoming">Incoming</button>
+                    <button class="tab" data-tab="outgoing">Outgoing</button>
+                </div>
+                <div id="transfersList" class="transfers-list">
+                    <!-- Transfers will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Reports Page -->
+            <section id="reportsPage" class="page">
+                <div class="page-header">
+                    <h2>Lost & Found Reports</h2>
+                    <button class="btn btn-primary" onclick="showPage('newReport')">+ New Report</button>
+                </div>
+                <div id="reportsList" class="reports-list">
+                    <!-- Reports will be loaded here -->
+                </div>
+            </section>
+
+            <!-- New Report Page -->
+            <section id="newReportPage" class="page">
+                <div class="card">
+                    <h2>Create Report</h2>
+                    <form id="newReportForm">
+                        <div class="form-group">
+                            <label for="reportType">Report Type</label>
+                            <select id="reportType" required>
+                                <option value="">Select type</option>
+                                <option value="lost">Lost Device</option>
+                                <option value="stolen">Stolen Device</option>
+                                <option value="found">Found Device</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="selectDeviceGroup">
+                            <label for="reportDevice">Select Your Device</label>
+                            <select id="reportDevice">
+                                <option value="">Select device or enter identifier below</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportIdentifier">Or Enter Device Identifier</label>
+                            <input type="text" id="reportIdentifier" placeholder="IMEI or Serial Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="reportLocation">Location</label>
+                            <input type="text" id="reportLocation" placeholder="Where it was lost/stolen/found">
+                        </div>
+                        <div class="form-group">
+                            <label for="reportNotes">Additional Notes</label>
+                            <textarea id="reportNotes" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit Report</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- QR Scanner Page -->
+            <section id="scanPage" class="page">
+                <div class="card">
+                    <h2>Scan QR Code</h2>
+                    <p>Scan a device transfer QR code to receive a device.</p>
+                    <div id="qrScanner" class="qr-scanner">
+                        <p>Camera access required for QR scanning.</p>
+                        <button class="btn btn-primary" id="startScanBtn">Start Scanner</button>
+                    </div>
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label>Or paste QR data:</label>
+                        <textarea id="qrDataInput" rows="3" placeholder="Paste QR code data here"></textarea>
+                        <button class="btn btn-secondary btn-block" id="processQrBtn" style="margin-top: 10px;">Process QR</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
